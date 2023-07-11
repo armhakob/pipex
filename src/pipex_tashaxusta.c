@@ -6,7 +6,7 @@
 /*   By: armhakob <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/02 14:41:38 by armhakob          #+#    #+#             */
-/*   Updated: 2023/07/02 14:44:20 by armhakob         ###   ########.fr       */
+/*   Updated: 2023/07/11 20:18:16 by armhakob         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*find_path(char **envp)
 	while (envp[i])
 	{
 		if (!ft_strncmp(envp[i], "PATH=", 5))
-			return (ft_strchr(envp[i], '/'));
+			return (ft_split(ft_strchr(envp[i], '/'), ':'));
 		i++;
 	}
 	return (0);
